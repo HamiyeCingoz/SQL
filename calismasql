@@ -1,0 +1,28 @@
+create table bilgiler(
+isim varchar(25),
+soy_isim varchar2(20),
+tc_no char (11),
+yas number(3) not null,
+adres varchar(50),
+dogum_yili date );
+
+insert into bilgiler values('Ahmet', 'Yildirim','123456789',25,'artvin','15-09-2020');
+insert into bilgiler values('mehmet', 'Yildirim','123456789',35,'yusufeli','14-09-2015');
+insert into bilgiler values('Demir', 'Yildirim','123456789',15,'peterek','13-09-2019');
+insert into bilgiler values('Demet', 'Yildirim','123456789',5,'cevizli','12-09-2018');
+select * from bilgilerim;
+
+rename bilgiler to bilgilerim;
+ ALTER TABLE bilgilerim ADD sehir VARCHAR(20);
+ ALTER TABLE bilgilerim DROP COLUMN sehir;
+ ALTER TABLE bilgilerim RENAME COLUMN dogum_yili TO dogum_tarihi;
+ ALTER TABLE bilgilerim MODIFY adres varchar(30);
+ 
+ SELECT * FROM bilgilerim ORDER BY yas ASC; -- KUCUKTEN BUYUGE SIRALAMA
+ SELECT * FROM bilgilerim ORDER BY yas DESC; -- YUKARIDAN ASAGIYA DOGRU 
+ 
+ select * from bilgilerim where isim='Ahmet';
+ 
+ select * from bilgilerim where yas between 25 AND 35;
+ select * from bilgilerim where isim LIKE '__m%';
+ 
